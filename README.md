@@ -9,8 +9,10 @@ Once the you have an account, you can access new features such as editing accoun
 
 
 
-<-- General Tips (mostly for me since I forget a lot, feel free to edit/include tips) -->
-   Creating New Content Pages
+##General Tips 
+   (mostly for me since I forget a lot, feel free to edit/include tips)
+   
+###Creating New Content Pages
     If the page is a static page and does not require any interation with model/database, create a new .html.erb file under 
     /apps/views/static_pages/ without DOCtype, html, head, or body tags since a layout was already created in the layout 
     folder.
@@ -22,13 +24,13 @@ Once the you have an account, you can access new features such as editing accoun
       
     Also make sure to add a 'get "pagename" => "foldername#pagename"' line in the routes.rb file under /config/
   
-  Pushing to github
+###Pushing to github
     $ git add -A
     *For all files
     $ git commit -m "Enter commit message here"
     $ git push
 
-<-- Log 4/12/15 -->
+##Log 4/12/15
   Tatsumi
     Completed: Created Rails App. Bootstrap layout (application.html.erb) is working. Made home page.
     Unfinished:  Search function on home.html.erb, not satisfied with CSS or nav bar yet.
