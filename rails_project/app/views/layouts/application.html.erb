@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recipe Generator</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+    </script>
+  <![endif]-->
+</head>
+<body>
+  <nav class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+     <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+	<%= link_to "Recipe Generator", '#', class: "navbar-brand" %>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Home", '#' %></li>
+          <li><%= link_to  '<span class="glyphicon glyphicon-user"></span>&nbsp; Create an account'.html_safe, '#'%>
+		<!-- <%= link_to "Create an account", '#' %></li>  <span class="glyphicon glyphicon-user"> <span class="glyphicon glyphicon-log-in"> -->
+          <li><%= link_to '<span class="glyphicon glyphicon-log-in"></span>&nbsp; Sign in'.html_safe, '#' %></li>
+        </ul>
+      </div><!-- /.nav-collapse -->
+    </div><!-- /.container -->
+  </nav><!-- /.navbar -->
+  <div class="container">	
+    <%= yield %>
+    <footer class="footer">
+      <p>RecipeGenerator© CSE 3901 2015</p>
+    </footer>
+  </div>
+</body>
+</html>
