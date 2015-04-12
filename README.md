@@ -10,7 +10,7 @@ Once the you have an account, you can access new features such as editing accoun
 
 
 <-- General Tips (mostly for me since I forget a lot, feel free to edit/include tips) -->
-  Creating New Content Pages
+   Creating New Content Pages
     If the page is a static page and does not require any interation with model/database, create a new .html.erb file under 
     /apps/views/static_pages/ without DOCtype, html, head, or body tags since a layout was already created in the layout 
     folder.
