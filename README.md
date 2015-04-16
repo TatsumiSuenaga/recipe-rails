@@ -32,3 +32,8 @@ Also make sure to add a `get "pagename" => "foldername#pagename"` line in the **
 
     Completed: Created Rails App. Bootstrap layout (application.html.erb) is working. Made home page.
     Unfinished:  Search function on home.html.erb, not satisfied with CSS or nav bar yet.
+
+
+**4/16/15** - Tatsumi
+
+    Search function now works, but is still in progress. Will update CSS by Friday night.
