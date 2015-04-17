@@ -3,6 +3,12 @@
 
 
 /* custom styles */
+
+#searchfield {
+	width: 400px;
+	display: inline;
+}
+
 body {
 	font-family: 'Josefin Sans', sans-serif;
 	//background-color: #FDF8F2;
@@ -21,12 +27,11 @@ h3.text-muted {
 	background-image: url('/assets/background.jpg');
 	background-size: 100%;
 	color: white;
-	//min-height: 450px;
-	//min-width: 650px;
+	min-height: 300px;
+	min-width: 100%;
 	//margin-top:0px;
 	//margin-bottom:8px;
 }
-
 
 /* Jumbotron Narrow CSS */
 body {
@@ -64,7 +69,7 @@ body {
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 1200px;
   }
 }
 .container-narrow > hr {
@@ -104,3 +109,4 @@ body {
     border-bottom: 0;
   }
 }
+

@@ -26,7 +26,7 @@ $(document).ready(function() { //Since it wouldn't work if document wasn't loade
 				var i; //recipe iterator
 				for (i = 0; i < max; i++) {
 					out += '<h3>' + arr.matches[i].recipeName + '</h3>'+ '<p>';
-					out += '<img src="' + arr.matches[i].smallImageUrls + '" alt="recipe image" width ="90" height="90"><br>';
+					out += '<img src="' + arr.matches[i].smallImageUrls + '" alt="recipe image" width ="150" height="150"><br>';
 					var z; //ingredients iterator
 					for (z = 0; z < arr.matches[i].ingredients.length; z++) {
 						if (z != arr.matches[i].ingredients.length - 1) {
