@@ -1,7 +1,16 @@
 /*Author: Tatsumi Suenaga
   Description: custom.js currently contains JS only meant for home.html.erb yummily search function
 */
+
 $(document).ready(function() { //Since it wouldn't work if document wasn't loaded and ready
+	$('[data-toggle="offcanvas"]').click(function () {
+    		$('.row-offcanvas').toggleClass('active')
+  	});
+	$("#searchfield").keyup(function(event){
+    		if(event.keyCode == 13){
+        		$("#search").click();
+   	 	}
+	});
 	$('#search').click(function(){
 		var xmlhttp = new XMLHttpRequest();
 		var baseURL = 'http://api.yummly.com/v1/api/recipes?_app_id=2857ec1f&_app_key=df850babfefb762882d0e2357d74fc4a&q=';
@@ -23,19 +32,22 @@ $(document).ready(function() { //Since it wouldn't work if document wasn't loade
 				if (arr.totalMatchCount < 10 && arr.totalMatchCount > 0) {
 					max= arr.totalMatchCount;
 				}
+				out += '<h3>Yummly Recipes</h3>';
 				var i; //recipe iterator
 				for (i = 0; i < max; i++) {
-					out += '<h3>' + arr.matches[i].recipeName + '</h3>'+ '<p>';
-					out += '<img src="' + arr.matches[i].smallImageUrls + '" alt="recipe image" width ="150" height="150"><br>';
+					out += '<div id="box"><div class="title"><h4>' + arr.matches[i].recipeName + '</h4></div>';
+					out += '<img src="' + arr.matches[i].smallImageUrls + '" alt="recipe image" width ="240" height="240"><br>';
+					out += '<div class="ingredients"><p>';
 					var z; //ingredients iterator
 					for (z = 0; z < arr.matches[i].ingredients.length; z++) {
 						if (z != arr.matches[i].ingredients.length - 1) {
 							out += arr.matches[i].ingredients[z] + ', ';
 						} else {
-							out += arr.matches[i].ingredients[z] + '</p>';
+							out += arr.matches[i].ingredients[z] + '</p><p><a class="btn btn-default" href="http://yummly.com/recipe/' + arr.matches[i].id+'" role="button" target="_blank" >View on Yummly »</a></p></div></div></div>';
 						}
 					}
 				}
+				
 			} else {
 				out += '<h3>No match found!</h3>';
 			}
