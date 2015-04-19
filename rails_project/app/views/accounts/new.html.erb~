@@ -9,7 +9,7 @@
 
     <table summary="Account form fields">
       <tr>
-        <th>Username:&nbsp;</th>
+        <th>Username: </th>
         <td><%= f.text_field(:username) %></td>
       </tr>
       <tr>

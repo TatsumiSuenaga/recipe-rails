@@ -23,7 +23,7 @@
     </table>
 
     <div class="form buttons">
-      <%= submit_tag("Update profile", :class => "btn btn-primary") %>
+      <%= submit_tag("Update profile", :class => "btn btn-primary) %>
     </div>
 
   <% end %>

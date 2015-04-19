@@ -12,6 +12,7 @@ body {
 
 /* custom styles */
 div.small-text {
+  border-top: thick double;
   font-size: 12px;
 }
 #box {

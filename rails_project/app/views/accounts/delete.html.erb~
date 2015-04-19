@@ -6,7 +6,7 @@
 
     <p>Are you sure you want to permanently delete this account?</p>
 
-    <h3 class="reference-name"><%= @account.username %></h3>
+    <p class="reference-name"><%= @account.username %></p>
 
     <div class="form-buttons">
       <%= submit_tag("Delete Account", :class => "btn btn-primary") %>
