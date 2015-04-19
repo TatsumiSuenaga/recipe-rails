@@ -19,7 +19,7 @@
     </table>
 
     <div class="form-buttons">
-      <%= submit_tag("Sign in", :class => "btn btn-primary") %>
+      <%= submit_tag("Sign in", :class => "btn btn-lg btn-primary") %>
     </div>
 
   <% end %>

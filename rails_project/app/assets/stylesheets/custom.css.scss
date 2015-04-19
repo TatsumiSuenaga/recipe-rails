@@ -1,16 +1,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
 html,
 body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
 }
+
 body {
   padding-top: 70px;
 }
+
 footer {
   padding: 30px 0;
+  margin-top: 20px;
 }
 
 /* custom styles */
@@ -83,11 +85,12 @@ h3.text-muted {
 	//margin-bottom:8px;
 }
 .footer {
-  padding-right: 15px;
-  padding-left: 15px;
+  text-align: left;
+  padding-right: 370px;
+  padding-left: 370px;
   padding-top: 19px;
   color: #777;
-  border-top: 1px solid #e5e5e5;
+  //border-top: 1px solid #e5e5e5;
 }
 @media screen and (max-width: 767px) {
   .row-offcanvas {

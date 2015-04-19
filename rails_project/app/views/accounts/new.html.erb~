@@ -23,7 +23,7 @@
     </table>
 
     <div class="form-buttons">
-      <%= submit_tag("Create Account", :class => "btn btn-primary") %>
+      <%= submit_tag("Create Account") %>
     </div>
 
   <% end %>

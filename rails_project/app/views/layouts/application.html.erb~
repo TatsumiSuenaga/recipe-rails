@@ -32,10 +32,12 @@
     </div><!-- /.container -->
   </nav><!-- /.navbar -->
   <div class="container">	
-    <%= yield %>
-    <footer class="footer">
-      <p>RecipeGenerator© CSE 3901 2015</p>
-    </footer>
+     <div class="col-md-12">	
+      <%= yield %>
+    </div>
   </div>
+  <footer class="footer">
+    <p>RecipeGenerator© CSE 3901 2015</p>
+  </footer>
 </body>
 </html>

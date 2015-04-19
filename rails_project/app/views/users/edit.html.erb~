@@ -15,7 +15,7 @@
         <td><%= f.text_field(:last_name) %></td>
       </tr>
       <tr>
-        <th>Edit your bio here: </th> 
+        <th>Edit your bio here: </th> <br>
         <td><%= f.text_area(:bio, :size => "30x10") %></td>
       </tr>
       
