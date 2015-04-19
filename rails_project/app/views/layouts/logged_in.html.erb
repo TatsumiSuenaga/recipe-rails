@@ -20,24 +20,21 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-	<%= link_to "Recipe Generator", root_path, class: "navbar-brand" %>
+	<%= link_to "Recipe Generator", {:controller => 'static_pages', :action => 'logged_in' , :id => @pid}, class: "navbar-brand" %>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to  '<span class="glyphicon glyphicon-user"></span>&nbsp; Create an account'.html_safe, {:controller => 'account', :action => 'new'}, :class => 'action new' %>
 		<!-- <%= link_to "Create an account", '#' %></li>  <span class="glyphicon glyphicon-user"> <span class="glyphicon glyphicon-log-in"> -->
-          <li><%= link_to '<span class="glyphicon glyphicon-log-in"></span>&nbsp; Sign in'.html_safe, {:controller => 'account', :action => 'sign_in'}, :class => 'action sign_in' %></li>
+          <li><%= link_to '<span class="glyphicon glyphicon-log-in"></span>&nbsp; Profile'.html_safe, {:controller => 'users', :action => 'show', :id => @pid}, :class => 'action sign_in' %></li>
         </ul>
       </div><!-- /.nav-collapse -->
     </div><!-- /.container -->
   </nav><!-- /.navbar -->
-  <div class="container">	
-     <div class="col-md-12">	
+  <div class="container">
+    <div class="col-md-12">	
       <%= yield %>
     </div>
   </div>
-  <footer class="footer">
-    <p>RecipeGenerator© CSE 3901 2015</p>
-  </footer>
 </body>
 </html>

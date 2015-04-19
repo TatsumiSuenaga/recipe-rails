@@ -1,10 +1,11 @@
-     <% if !flash[:notice].blank? %>
+<% @pid = @users.id%>
+<% if !flash[:notice].blank? %>
           <div class="notice"><%= flash[:notice] %></div>
 <% end %>
 <%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
 
 <div class="Recipes show">
-  <h2>Show Recipe</h2>
+  <h2>Your Recipe</h2>
 
   <table summary="Recipe detail view">
     <tr>
@@ -16,13 +17,6 @@
       <td><%= @recipes.recipeDescription %></td>
     </tr>
     <tr>
-      <th>Created</th>
-      <td><%= @recipes.created_at %></td>
-    </tr>
-    <tr>
-      <th>Updated</th>
-      <td><%= @recipes.updated_at %></td>
-    </tr>
   </table>
 
 </div>

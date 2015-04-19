@@ -1,7 +1,10 @@
-<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
-
+<% @pid = @account.id%>
 <div class="accounts edit">
   <h2>Edit Account </h2>
+
+  <% if !flash.now[:notice].blank? %>
+      <div class = "notice"><%= flash.now[:notice] %></div>
+  <% end %>
 
   <%= form_tag :action => 'update' do %>
 

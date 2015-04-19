@@ -1,5 +1,8 @@
 class RecipesController < ApplicationController
   
+  layout 'logged_in'
+
+
   def index
     @users = User.find(params[:user_id])
     @recipes = @users.recipes.order("recipe_id ASC")

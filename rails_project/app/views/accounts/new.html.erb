@@ -1,9 +1,9 @@
-<% if !flash.now[:notice].blank? %>
-      <div class = "notice"><%= flash.now[:notice] %></div>
-    <% end %>
-
 <div class="form-signin">
   <h2 class="form-signin-heading">Create Account</h2>
+  
+  <% if !flash.now[:notice].blank? %>
+      <div class = "notice"><%= flash.now[:notice] %></div>
+  <% end %>
 
   <%= form_for(:account, :url => {:action => 'create_account'}) do |f| %>
 
@@ -28,3 +28,4 @@
 
   <% end %>
 </div>
+

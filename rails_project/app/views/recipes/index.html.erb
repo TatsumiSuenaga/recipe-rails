@@ -1,4 +1,4 @@
-
+<% @pid = @users.id%>
 <% if !flash[:notice].blank? %>
           <div class="notice"><%= flash[:notice] %></div>
 <% end %>
@@ -9,16 +9,14 @@
 
   <table>
     <tr>
-      <th>Id</th>
       <th>Recipe</th>
       <th>Actions</th>
     </tr>
     <% @users.recipes.each do |recipe| %>
     <tr>
-      <td><%= recipe.id %></td>
       <td><%= recipe.recipeName %></td>     
       <td>
-        <%= link_to("Show", { :controller => 'recipes', :action => 'show', :id => recipe.id }, :class => 'action show') %>
+        <%= link_to("View", { :controller => 'recipes', :action => 'show', :id => recipe.id }, :class => 'action show') %>
         <%= link_to("Edit", { :controller => 'recipes', :action => 'edit', :id => recipe.id }, :class => 'action edit') %>
         <%= button_to("Delete", user_recipe_path(recipe.user, :id => recipe.id), method: :delete, :confirm=> "Are you sure?" ) %>
       </td>

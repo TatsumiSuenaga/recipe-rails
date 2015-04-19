@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   
+  layout 'logged_in'
+
   def index
    @users = User.order("user_id ASC")
   end

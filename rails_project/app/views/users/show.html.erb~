@@ -3,10 +3,8 @@
           <div class="notice"><%= flash[:notice] %></div>
 <% end %>
 <div class="col-xs-12 col-md-10">
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title">Your Profile</h3>
-  </div>
+<div>
+
   <table>   
     <tr>
       <th>Name</th>
@@ -31,7 +29,7 @@
 <%= link_to("Delete Account", {:controller => 'accounts', :action => 'delete', :id => @users.id} , :class => 'action edit') %>
 </div>
 </div>
-
+</div>
 
 
 

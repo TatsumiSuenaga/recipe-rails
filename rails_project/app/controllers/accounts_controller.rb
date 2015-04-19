@@ -1,10 +1,8 @@
 class AccountsController < ApplicationController
 
+  layout "logged_in", :except => [:sign_in, :new, :create_account, :process_sign_in]
+
   def sign_in
-  end
-  
-  def profile
-    @id = params[:id]
   end
 
   def process_sign_in
@@ -17,18 +15,16 @@ class AccountsController < ApplicationController
          @x = acc.id
        end
      end
-     redirect_to(:controller => 'users' , :action => 'index', :id => @x)
+     @login = true
+     redirect_to(:controller => 'users' , :action => 'show', :id => @x)
     else
-     
+      flash.now[:notice] = "Invalid Login"
+      render('sign_in')
     end
-  end
- 
-  def index
-    @accounts = Account.all
   end
 
   def show
-    @account = Account.find_by_id(params[:id])
+    @account = Account.find(params[:id])
   end
 
   def create_account
@@ -42,8 +38,10 @@ class AccountsController < ApplicationController
     else
        if @account.save
         @account.user = User.new
+        @theID = @account.id
         redirect_to(:controller => 'users' ,:action => 'index', :id => @account.id)
       else
+        flash.now[:notice] = "An error occurred when trying to create your account"
         render('new')
       end
     end
@@ -54,32 +52,34 @@ class AccountsController < ApplicationController
   end
 
   def edit
-    @account = Account.find_by_id(params[:id])
+    @account = Account.find(params[:id])
   end
 
   def update
     pword = [params[:oldpword], params[:newpword1], params[:newpword2]]
     @account = Account.find(params[:id])
-    
     if (@account.password == pword[0] && pword[1] == pword[2])
       if @account.update_attributes(:password => pword[1])
-        redirect_to(:action => 'show', :id => @account.id)
+        flash[:notice] = "Password successfully updated"
+        redirect_to(:controller => 'users', :action => 'show', :id => @account.id)
       else
+        flash.now[:notice] = "Unable to update password"
         render('edit')
       end
     else
-      render('index')
+      flash.now[:notice] = "Your passwords do not match"
+      render('edit')
     end
   end
 
   def delete
-    @account = Account.find_by_id(params[:id])
+    @account = Account.find(params[:id])
   end
 
   def destroy
     @account = Account.find(params[:id])
     @account.destroy
-    redirect_to(:action => 'index')
+    redirect_to(:action => 'new')
   end
 
   private 

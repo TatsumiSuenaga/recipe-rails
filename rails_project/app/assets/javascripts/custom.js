@@ -57,3 +57,4 @@ var go = function () {
 }
 $(document).ready(go);
 $(document).on('page:load', go);
+

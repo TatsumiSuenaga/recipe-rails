@@ -1,9 +1,10 @@
-<% if !flash[:notice].blank? %>
-      <div class = "notice"><%= flash[:notice] %></div>
-<% end %>
 <div class="form-signin">
    
    <h2 class"form-signin-heading">Sign In</h2>
+
+   <% if !flash[:notice].blank? %>
+      <div class = "notice"><%= flash[:notice] %></div>
+   <% end %>
 
    <%= form_tag :action => 'process_sign_in' do %>
 
@@ -24,3 +25,4 @@
 
   <% end %>
 </form>
+

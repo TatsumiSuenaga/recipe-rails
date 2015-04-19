@@ -1,2 +1,16 @@
-<h1>Accounts#delete</h1>
-<p>Find me in app/views/accounts/delete.html.erb</p>
+<% @pid = @account.id%>
+<div class="accounts delete">
+  <h2>Delete Account</h2>
+
+  <%= form_for(:account, :url => { :action => 'destroy', :id => @account.id}) do |f| %>
+
+    <p>Are you sure you want to permanently delete this account?</p>
+
+    <p class="reference-name"><%= @account.username %></p>
+
+    <div class="form-buttons">
+      <%= submit_tag("Delete Account") %>
+    </div>
+
+  <% end %>
+</div>
