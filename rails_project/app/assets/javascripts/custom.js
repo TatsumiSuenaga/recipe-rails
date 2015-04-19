@@ -1,8 +1,7 @@
 /*Author: Tatsumi Suenaga
-  Description: custom.js currently contains JS only meant for home.html.erb yummily search function
+Description: custom.js currently contains JS only meant for home.html.erb yummily search function
 */
-
-$(document).ready(function() { //Since it wouldn't work if document wasn't loaded and ready
+var go = function () {
 	$('[data-toggle="offcanvas"]').click(function () {
     		$('.row-offcanvas').toggleClass('active')
   	});
@@ -55,4 +54,6 @@ $(document).ready(function() { //Since it wouldn't work if document wasn't loade
 			document.getElementById("result").innerHTML = out;
 		}
 	});
-});
+}
+$(document).ready(go);
+$(document).on('page:load', go);

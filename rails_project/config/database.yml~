@@ -9,8 +9,8 @@ default: &default
   encoding: utf8
   database: rails_project_development
   pool: 5
-  username: root
-  password: password
+  username: theheadchef
+  password: soupdujour
   socket: /run/mysqld/mysqld.sock
 
 development:
@@ -18,8 +18,8 @@ development:
   encoding: utf8
   database: rails_project_development
   pool: 5
-  username: root
-  password: password
+  username: theheadchef
+  password: soupdujour
   socket: /run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and

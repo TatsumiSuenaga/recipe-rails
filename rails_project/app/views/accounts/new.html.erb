@@ -1,0 +1,30 @@
+<% if !flash.now[:notice].blank? %>
+      <div class = "notice"><%= flash.now[:notice] %></div>
+    <% end %>
+
+<div class="accounts new">
+  <h2>Create Account</h2>
+
+  <%= form_for(:account, :url => {:action => 'create_account'}) do |f| %>
+
+    <table summary="Account form fields">
+      <tr>
+        <th>Username</th>
+        <td><%= f.text_field(:username) %></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td><%= f.text_field(:email) %></td>
+      </tr>
+      <tr>
+        <th>Password</th>
+        <td><%= f.text_field(:password) %></td>
+      </tr>
+    </table>
+
+    <div class="form-buttons">
+      <%= submit_tag("Create Account") %>
+    </div>
+
+  <% end %>
+</div>

@@ -1,0 +1,14 @@
+<% if User.exists? %>
+
+<% user = User.find(params[:id]) %>
+<h2>Welcome to Recipe Generator, <%= user.first_name %></h2>
+<p>Recipe Generator is the place to search for recipes, create your own, and make delicious food.</p>
+
+<br />
+<%= link_to("Show Your Profile", {:action => 'show', :id => user.id }, :class => 'action show') %>
+
+<% else %>
+ <p>create your profile here</p>
+ <%= link_to("Create profile",{:controller => 'users', :action => 'new'}, :class =>'action new') %>
+<% end %>
+

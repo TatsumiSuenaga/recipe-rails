@@ -1,0 +1,30 @@
+<%= link_to "<<Go back to Profile", {:action => 'show', :id => @users.id} %>
+
+<div>
+  <h2>Edit Your Profile</h2>
+
+  <%= form_for(@users) do |f| %>
+
+    <table>
+      <tr>
+        <th>Edit your First Name here: </th>
+        <td><%= f.text_field(:first_name) %></td>
+      </tr>
+      <tr>
+        <th>Edit you Last Name here: </th>
+        <td><%= f.text_field(:last_name) %></td>
+      </tr>
+      <tr>
+        <th>Edit your bio here: </th>
+        <td><%= f.text_field(:bio) %></td>
+      </tr>
+      
+    </table>
+
+    <div class="form-buttons">
+      <%= submit_tag("Update profile") %>
+    </div>
+
+  <% end %>
+</div>
+

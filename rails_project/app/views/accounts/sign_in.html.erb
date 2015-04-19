@@ -1,0 +1,28 @@
+<% if !flash[:notice].blank? %>
+      <div class = "notice"><%= flash[:notice] %></div>
+<% end %>
+
+
+<div class="accounts sign_in">
+   
+   <h1>Sign In</h1>
+
+   <%= form_tag :action => 'process_sign_in' do %>
+
+    <table summary="Account form fields">
+      <tr>
+        <th>Username</th>
+        <td><%= text_field_tag :uname %></td>
+      </tr>
+      <tr>
+        <th>Password</th>
+        <td><%= text_field_tag :pword %></td>
+      </tr>
+    </table>
+
+    <div class="form-buttons">
+      <%= submit_tag("Sign_In") %>
+    </div>
+
+  <% end %>
+</div>

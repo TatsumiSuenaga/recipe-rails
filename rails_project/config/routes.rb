@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
+  
+  resources :users do 
+    resources :recipes
+  end
+
+  match ':controller(/:action(/:id))', :via => [:get,:post] 
+
+  get 'account/new' => 'accounts#new'
+  get 'account/sign_in' => 'accounts#sign_in'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -15,7 +24,6 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
   # Example resource route with options:
   #   resources :products do
   #     member do

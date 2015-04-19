@@ -1,0 +1,26 @@
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="recipes new">
+  <h2>Create Recipe</h2>
+
+  <%= form_for(:recipes, :url => {:controller => 'recipes', :action => 'create'}) do |f| %>
+
+    <table summary="Recipe form fields">
+      <tr>
+        <th>Name</th>
+        <td><%= f.text_field(:recipeName) %></td>
+      </tr>
+      <tr>
+        <th>Description</th>
+        <td><%= f.text_field(:recipeDescription) %></td>
+      </tr>
+      
+    </table>
+
+    <div class="form-buttons">
+      <%= submit_tag("Create Recipe") %>
+    </div>
+
+  <% end %>
+</div>
+
