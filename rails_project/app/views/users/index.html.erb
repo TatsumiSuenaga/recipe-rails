@@ -1,0 +1,11 @@
+<% user = User.find(params[:id]) %>
+<% @pid = user.id%>
+<h2>Welcome to Recipe Generator </h2>
+<p>Recipe Generator is the place to search for recipes, create your own, and make delicious food.</p>
+
+<br />
+
+<%= link_to("Create Your Profile", {:action => 'edit', :id => user.id }, :class => 'btn btn-success') %>
+
+
+

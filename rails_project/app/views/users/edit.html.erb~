@@ -1,0 +1,42 @@
+<% @pid = @users.id%>
+<<<<<<< HEAD
+<%= link_to '<span class="glyphicon glyphicon-arrow-left"></span>&nbsp; Back to Profile'.html_safe, {:action => 'show', :id => @users.id}, :class => "btn btn-primary" %>
+=======
+>>>>>>> 01a3e5cad92606522707d32e1601b44ad042f81f
+
+<div>
+  <h2>Edit Your Profile</h2>
+
+<% if !flash[:notice].blank? %>
+          <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+  <%= form_for(@users) do |f| %>
+
+    <table>
+      <tr>
+        <th>Edit your First Name here: &nbsp;</th>
+        <td><%= f.text_field(:first_name) %></td>
+      </tr>
+      <tr>
+        <th>Edit you Last Name here: </th>
+        <td><%= f.text_field(:last_name) %></td>
+      </tr>
+      <tr>
+        <th>Edit your bio here: </th> 
+        <td><%= f.text_area(:bio, :size => "30x10") %></td>
+      </tr>
+      
+    </table>
+
+    <div class="form buttons">
+      <%= submit_tag("Update profile", :class => "btn btn-success") %>
+    </div>
+
+  <% end %>
+</div>
+
+
+
+
+
