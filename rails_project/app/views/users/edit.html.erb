@@ -1,8 +1,11 @@
 <% @pid = @users.id%>
-<%= link_to "<<Go back to Profile", {:action => 'show', :id => @users.id} %>
 
 <div>
   <h2>Edit Your Profile</h2>
+
+<% if !flash[:notice].blank? %>
+          <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 
   <%= form_for(@users) do |f| %>
 
@@ -28,6 +31,7 @@
 
   <% end %>
 </div>
+
 
 
 
