@@ -10,8 +10,8 @@ default: &default
   database: rails_project_development
   pool: 5
   strict: false
-  username: theheadchef
-  password: soupdujour
+  username: root
+  password: password
   socket: /run/mysqld/mysqld.sock
 
 development:
@@ -20,8 +20,8 @@ development:
   database: rails_project_development
   strict: false
   pool: 5
-  username: theheadchef
-  password: soupdujour
+  username: root
+  password: password
   socket: /run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and

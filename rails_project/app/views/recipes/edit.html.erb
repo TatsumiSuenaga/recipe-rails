@@ -3,10 +3,16 @@
 
 <div>
   <h2>Edit Recipe</h2>
+<<<<<<< HEAD
  <% if !flash.now[:notice].blank? %>
       <div class = "notice"><%= flash.now[:notice] %></div>
   <% end %>
 
+=======
+  <% if !flash[:notice].blank? %>
+          <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+>>>>>>> 01a3e5cad92606522707d32e1601b44ad042f81f
   <%= form_for(:recipes, :url => {:controller => 'recipes', :action => 'update'}, :html => { :method => :put}) do |f| %>
 
     <table summary="Recipe form fields">

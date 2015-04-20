@@ -2,7 +2,7 @@
 <%= link_to '<span class="glyphicon glyphicon-arrow-left"></span>&nbsp; Back to Profile'.html_safe, {:controller => 'users' , :action => 'show', :id => @account.id}, :class => "btn btn-primary"%>
 
 <div class="accounts edit">
-  <h2>Edit Account </h2>
+  <h2>Change Password </h2>
 
   <% if !flash.now[:notice].blank? %>
       <div class = "notice"><%= flash.now[:notice] %></div>
@@ -33,3 +33,4 @@
   
   <% end %>
 </div>
+

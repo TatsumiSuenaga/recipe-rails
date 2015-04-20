@@ -24,9 +24,13 @@
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to  '<span class="glyphicon glyphicon-user"></span>&nbsp; Profile'.html_safe, {:controller => 'users', :action => 'show', :id => @pid }, :class => 'action message' %>
+<<<<<<< HEAD
+          <li><%= link_to  '<span class="glyphicon glyphicon-user"></span>&nbsp; Profile'.html_safe, {:controller => 'users', :action => 'show', :id => @pid }, :id => 'action' %>
+=======
+          <li><%= link_to  '<span class="glyphicon glyphicon-user"></span>&nbsp; Create an account'.html_safe, {:controller => 'accounts', :action => 'already_logged_in', :id => @pid }, :class => 'action message' %>
+>>>>>>> 01a3e5cad92606522707d32e1601b44ad042f81f
 		<!-- <%= link_to "Create an account", '#' %></li>  <span class="glyphicon glyphicon-user"> <span class="glyphicon glyphicon-log-in"> -->
-          <li><%= link_to '<span class="glyphicon glyphicon-log-out"></span>&nbsp; Logout'.html_safe, {:controller => 'accounts', :action => 'logged_out'}, :class => 'action logout' %></li>
+          <li><%= link_to '<span class="glyphicon glyphicon-log-out"></span>&nbsp; Logout'.html_safe, {:controller => 'accounts', :action => 'logged_out'}, :id => 'action' %></li>
         </ul>
       </div><!-- /.nav-collapse -->
     </div><!-- /.container -->
