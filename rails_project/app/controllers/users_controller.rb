@@ -10,36 +10,29 @@ class UsersController < ApplicationController
   @users = User.find(params[:id])
   end
   
-  def new
-	@users = User.new
-  end 
-  
-  def create
-	@users = User.new(user_params)
-      if @users.save
-        redirect_to(:action => 'index')
-    else
-        render('new')
-    end
-    if @users.save
-         flash[:notice] = "Recipe created successfully."
-    end
-  end
-  
   def edit 
     @users = User.find(params[:id])
   end
 
   def update
         @users = User.find(params[:id])
-        if @users.update_attributes(user_params)
-	    flash[:notice] = "User updated successfully."
-            redirect_to(:action => 'show', :id => @users.id)
+        if (user_params[:first_name].length > 25 || user_params[:last_name].length > 50 || user_params[:bio].length > 2000)
+          flash[:notice] = "Input too long"
+          render('edit')
+        elsif(user_params[:first_name] != "" && user_params[:last_name] != "" && user_params[:bio] != "")
+          if @users.update_attributes(user_params)
+	      flash[:notice] = "Profile updated successfully."
+              redirect_to(:action => 'show', :id => @users.id)
+          else
+              flash[:notice] = "There was an error updating your profile"
+              render('edit')
+          end
         else
-            render('edit')
+          flash[:notice] = "You must include a name or bio"
+          render('edit') 
         end
-           
   end
+
   def delete
   end 
 
@@ -48,7 +41,7 @@ class UsersController < ApplicationController
   
 private
   def user_params
-      params.require(:user).permit(:first_name,:last_name, :bio, :email)
+      params.require(:user).permit(:first_name,:last_name, :bio)
   end
 
 end

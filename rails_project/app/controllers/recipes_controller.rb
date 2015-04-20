@@ -21,12 +21,20 @@ class RecipesController < ApplicationController
  
   def create
     @users = User.find(params[:user_id])
-    @recipes = @users.recipes.new(recipe_params)
-    if @recipes.save       
-	flash[:notice] = "Recipe created successfully."
- 	redirect_to(:action => 'index')
+    if (recipe_params[:recipeName].length > 50 || recipe_params[:recipeDescription].length > 2000)
+      flash[:notice] = "Input too long"
+      render('new')
+    elsif(recipe_params[:recipeName] != "" && recipe_params[:recipeDescription] != "")
+      @recipes = @users.recipes.new(recipe_params)
+      if @recipes.save       
+	  flash[:notice] = "Recipe created successfully."
+ 	  redirect_to(:action => 'index')
+      else
+          render('new')
+      end
     else
-        render('new')
+      flash[:notice] = "You must include a name and description"
+      render('new')
     end
   end
     
@@ -37,12 +45,17 @@ class RecipesController < ApplicationController
 
   def update
         @users = User.find(params[:user_id])
-        @recipes = @users.recipes.find(params[:id])
-        if @recipes.update_attributes(recipe_params)
-	    flash[:notice] = "Recipe updated successfully."
-            redirect_to(:action => 'show', :id => @recipes.id)
+        if(recipe_params[:recipeName] != "" && recipe_params[:recipeDescription] != "")
+          @recipes = @users.recipes.find(params[:id])
+          if @recipes.update_attributes(recipe_params)
+	      flash[:notice] = "Recipe updated successfully."
+              redirect_to(:action => 'show', :id => @recipes.id)
+          else
+              render('edit')
+          end
         else
-            render('edit')
+          flash[:notice] = "You must include a name and description"
+          render('edit')
         end
   end
 

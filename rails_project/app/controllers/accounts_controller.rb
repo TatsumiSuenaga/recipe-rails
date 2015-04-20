@@ -1,8 +1,11 @@
 class AccountsController < ApplicationController
 
-  layout "logged_in", :except => [:sign_in, :new, :create_account, :process_sign_in]
+  layout "logged_in", :except => [:sign_in, :new, :create_account, :process_sign_in, :logged_out]
 
   def sign_in
+  end
+
+  def logged_out
   end
 
   def process_sign_in
@@ -28,21 +31,29 @@ class AccountsController < ApplicationController
   end
 
   def create_account
-    @account = Account.new(account_params)
-    if (Account.exists?(:username => @account.username))
-      flash.now[:notice] = "That username is already being used"
+    if(account_params[:username].length > 25 || account_params[:email].length > 25 || account_params[:password].length > 25)
+      flash.now[:notice] = "Input too long"
       render('new')
-    elsif (Account.exists?(:email => @account.email))
-      flash.now[:notice] = "That email is already being used"
+    elsif(account_params[:username] == "" || account_params[:email] == "" || account_params[:password] == "")
+      flash.now[:notice] = "You must have a valid username, email and password"
       render('new')
     else
-       if @account.save
-        @account.user = User.new
-        @theID = @account.id
-        redirect_to(:controller => 'users' ,:action => 'index', :id => @account.id)
-      else
-        flash.now[:notice] = "An error occurred when trying to create your account"
+      @account = Account.new(account_params)
+      if (Account.exists?(:username => @account.username))
+        flash.now[:notice] = "That username is already being used"
         render('new')
+      elsif (Account.exists?(:email => @account.email))
+        flash.now[:notice] = "That email is already being used"
+        render('new')    
+      else
+         if @account.save
+          @account.user = User.new
+          @theID = @account.id
+          redirect_to(:controller => 'users' ,:action => 'index', :id => @account.id)
+        else
+          flash.now[:notice] = "An error occurred when trying to create your account"
+          render('new')
+        end
       end
     end
   end

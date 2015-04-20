@@ -1,16 +1,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+@import url(http://fonts.googleapis.com/css?family=Pacifico|Josefin+Sans);
 
 html,
 body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
+  font-size: 16px;
 }
 body {
   padding-top: 70px;
 }
 
 /* custom styles */
+div.navbar-header{
+  font-family: 'Pacifico', cursive; 
+} 
+
 div.small-text {
   font-size: 12px;
 }
@@ -62,10 +67,18 @@ body {
 	font-family: 'Josefin Sans', sans-serif;
 	//background-color: #FDF8F2;
 }
-.navbar,
-.navbar-fixed-top,
+
+#action {
+  color: white;
+}
+
+.navbar-inverse .navbar-brand {
+  color: white;
+}
 .navbar-inverse {
-	//background-color: #CC6600;
+	background-color: #CC6600;
+	color: white;
+    	border-color: #CC6600;
 }
 h3.text-muted {
 	font-family: 'Pacifico', cursive;

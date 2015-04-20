@@ -31,14 +31,13 @@
       <br />
       <%= link_to "View Your Recipes", user_recipes_path(@users, @recipes) %>
       <br />
-      <%= link_to "Logout", root_path %>
-      <br />
       <%= link_to("Delete Account", {:controller => 'accounts', :action => 'delete', :id => @users.id} , :class => 'action edit') %> 
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
 
 

@@ -4,6 +4,6 @@
 <p>Recipe Generator is the place to search for recipes, create your own, and make delicious food.</p>
 
 <br />
-<%= link_to("Create Your Profile", {:action => 'edit', :id => user.id }, :class => 'btn btn-success') %>
+<%= link_to("Create Your Profile", {:action => 'edit', :id => user.id }, :class => 'action edit') %>
 
 

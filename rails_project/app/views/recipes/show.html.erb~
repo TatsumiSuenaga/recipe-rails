@@ -7,7 +7,7 @@
 <div class="Recipes show">
   <h2>Your Recipe</h2>
 
-  <table class="table table-striped" summary="Recipe detail view">
+  <table class="table table-striped"summary="Recipe detail view">
     <tr>
       <th>Name</th>
       <td><%= @recipes.recipeName %></td>
