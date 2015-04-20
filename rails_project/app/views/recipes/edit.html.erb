@@ -3,7 +3,9 @@
 
 <div>
   <h2>Edit Recipe</h2>
-
+  <% if !flash[:notice].blank? %>
+          <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
   <%= form_for(:recipes, :url => {:controller => 'recipes', :action => 'update'}, :html => { :method => :put}) do |f| %>
 
     <table summary="Recipe form fields">
